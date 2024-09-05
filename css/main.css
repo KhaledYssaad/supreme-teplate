@@ -59,7 +59,7 @@ ul {
 /* header start */
 
 header {
-    background-image: url('/pics/landing.jpg');
+    background-image: url(../pics/landing.jpg);
     background-size: cover;
     min-height: 100vh;
     position: relative;
@@ -389,7 +389,7 @@ section.services .container {
 /* design start */
 
 section.design {
-    background-image: url(/pics/design-features.jpg);
+    background-image: url(../pics/design-features.jpg);
     background-size: cover;
     height: 600px;
     display: flex;
@@ -657,7 +657,7 @@ section.video video {
 /* achivments start */
 
 .achivments {
-    background-image: url(/pics/stats.png);
+    background-image: url(../pics/stats.png);
     background-size: cover;
     padding: var(--section-padding) 0;
     position: relative;
@@ -929,7 +929,7 @@ section.video video {
 .quote {
     position: relative;
     padding: var(--section-padding) 0;
-    background-image: url(/pics/quote.jpg);
+    background-image: url(../pics/quote.jpg);
     background-size: cover;
     text-align: center;
     color: white;
@@ -1090,7 +1090,7 @@ section.video video {
 /* subscribe start */
 
 .subscribe {
-    background-image: url(/pics/subscribe.jpg);
+    background-image: url(../pics/subscribe.jpg);
     background-size: cover;
     padding: var(--section-padding) 0;
     position: relative;
@@ -1280,7 +1280,7 @@ section.video video {
 /* footer start  */
 
 footer {
-    background-image: url(/pics/subscribe.jpg);
+    background-image: url(../pics/subscribe.jpg);
     background-size: cover;
     padding: var(--section-padding) 0;
     color: white;

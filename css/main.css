@@ -61,7 +61,7 @@ ul {
 header {
     background-image: url('/pics/landing.jpg');
     background-size: cover;
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
     z-index: 1;
 }

@@ -59,7 +59,7 @@ ul {
 /* header start */
 
 header {
-    background-image: url('../pics/landing.jpg');
+    background-image: url('/pics/landing.jpg');
     background-size: cover;
     height: 100vh;
     position: relative;
@@ -187,7 +187,6 @@ header nav i.glass {
 
 header .text {
     max-width: 650px;
-    min-width: 300px;
     background-color: var(--transparent-color);
     padding: 40px 80px;
     position: absolute;
@@ -207,6 +206,7 @@ header .text p {
     width: 100%;
     line-height: 1.8;
 }
+
 
 
 header .spans {
@@ -254,10 +254,15 @@ header .arrow-right {
     right: 30px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     header .arrows i {
         display: none;
     }
+
+    header .text {
+        padding: 16px;
+    }
+
 }
 
 /* header end */
@@ -270,6 +275,7 @@ div.main-title {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 100%;
 }
 
 .main-title h1 {
@@ -307,9 +313,12 @@ div.main-title {
     line-height: 2;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+
+
     .main-title p {
         font-size: small;
+        max-width: 100%;
     }
 }
 
@@ -319,13 +328,12 @@ div.main-title {
 /* services starts */
 
 section.services {
-    padding: var(--section-padding);
-    display: flex;
-    justify-content: center;
+    padding: var(--section-padding) 0;
 }
 
 section.services .container {
     margin: 0 auto;
+    max-width: 100%;
 }
 
 .services .article-container {
@@ -333,6 +341,7 @@ section.services .container {
     gap: 22px;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     justify-content: center;
+    max-width: 100%;
 }
 
 .services article {
@@ -340,16 +349,7 @@ section.services .container {
     gap: 20px 40px;
     align-items: flex-start;
     padding: 20px;
-}
-
-@media (max-width: 991px) {
-    .services article {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        gap: 10px;
-    }
+    max-width: 100%;
 }
 
 .services article i {
@@ -368,12 +368,28 @@ section.services .container {
     color: #777;
 }
 
+
+@media (max-width: 991px) {
+    .services .article-container {
+        grid-template-columns: 1fr;
+    }
+
+    .services article {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+}
+
 /* services ends */
 
 /* design start */
 
 section.design {
-    background-image: url(../pics/design-features.jpg);
+    background-image: url(/pics/design-features.jpg);
     background-size: cover;
     height: 600px;
     display: flex;
@@ -452,13 +468,19 @@ section.portfolio {
     padding: 5px 15px;
 }
 
+@media (max-width:767px) {
+    .portfolio .categories {
+        flex-wrap: wrap;
+    }
+}
+
 .portfolio .categories span:first-child {
     background-color: var(--main-color);
     color: white;
 }
 
 .portfolio .pictures {
-    width: 99%;
+    max-width: 100%;
     margin: 60px auto 0;
     display: flex;
     flex-wrap: wrap;
@@ -484,7 +506,9 @@ section.portfolio {
 }
 
 .portfolio .pictures .box img {
-    max-width: 100%;
+    display: block;
+    max-width: 98%;
+    margin: 0 auto;
     object-fit: cover;
     transition: 0.2s;
 }
@@ -539,6 +563,8 @@ section.portfolio {
 section.video {
     position: relative;
     z-index: 1;
+    max-width: 100%;
+
 }
 
 section.video::before {
@@ -585,8 +611,28 @@ section.video::before {
     cursor: pointer
 }
 
+@media (max-width:767px) {
+    .video .text h1 {
+        font-size: 16px;
+    }
+
+    .video .text h3 {
+        font-size: 16px;
+    }
+
+    .video .text p {
+        font-size: 12px;
+    }
+
+    .video .text h1,
+    .video .text h3,
+    .video .text p {
+        margin: 5px 0;
+    }
+}
+
 section.video video {
-    width: 100%;
+    max-width: 100%;
 }
 
 /* video end */
@@ -596,8 +642,7 @@ section.video video {
 .about .image {
     overflow: hidden;
     position: relative;
-    width: 100%;
-    height: 500px;
+    max-width: 100%;
 }
 
 .about .image img {
@@ -612,7 +657,7 @@ section.video video {
 /* achivments start */
 
 .achivments {
-    background-image: url(../pics/stats.png);
+    background-image: url(/pics/stats.png);
     background-size: cover;
     padding: var(--section-padding) 0;
     position: relative;
@@ -688,18 +733,19 @@ section.video video {
 }
 
 .team .container>div {
-    padding: 20px;
+    padding: 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    height: 100%;
+    max-width: 100%;
 }
 
 
 .team .container .headline {
     text-align: center;
     margin-bottom: 35px;
+    max-width: 100%;
 }
 
 .TESTIMONIALS .person {
@@ -714,7 +760,6 @@ section.video video {
 .TESTIMONIALS .person .image {
     height: 75px;
     width: 75px;
-
 }
 
 .TESTIMONIALS .person .image img {
@@ -756,6 +801,28 @@ section.video video {
     gap: 10px;
     z-index: 3;
 }
+
+
+@media (max-width:767px) {
+    .team .container {
+        grid-template-columns: 1fr;
+    }
+
+    .TESTIMONIALS .person {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .TESTIMONIALS .person .text {
+        width: 100%;
+    }
+
+    .spans {
+        bottom: 0px;
+    }
+
+}
+
 
 .TESTIMONIALS .spans span {
     display: inline-block;
@@ -862,7 +929,7 @@ section.video video {
 .quote {
     position: relative;
     padding: var(--section-padding) 0;
-    background-image: url(../pics/quote.jpg);
+    background-image: url(/pics/quote.jpg);
     background-size: cover;
     text-align: center;
     color: white;
@@ -1023,7 +1090,7 @@ section.video video {
 /* subscribe start */
 
 .subscribe {
-    background-image: url(../pics/subscribe.jpg);
+    background-image: url(/pics/subscribe.jpg);
     background-size: cover;
     padding: var(--section-padding) 0;
     position: relative;
@@ -1075,7 +1142,7 @@ section.video video {
     position: absolute;
     right: 0;
     height: 100%;
-    width: 25%;
+    width: 35%;
     padding: 0 15px;
     border: none;
     outline: none;
@@ -1088,6 +1155,19 @@ section.video video {
     width: 50%;
     color: white;
 }
+
+
+@media (max-width:767px) {
+    .subscribe .container {
+        flex-direction: column;
+    }
+
+    .subscribe .container p,
+    .subscribe .container form {
+        width: 100%;
+    }
+}
+
 
 /* subscribe end */
 
@@ -1200,7 +1280,7 @@ section.video video {
 /* footer start  */
 
 footer {
-    background-image: url(../pics/subscribe.jpg);
+    background-image: url(/pics/subscribe.jpg);
     background-size: cover;
     padding: var(--section-padding) 0;
     color: white;

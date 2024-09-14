@@ -59,24 +59,15 @@ ul {
 /* header start */
 
 header {
-    background-image: url(../pics/landing.jpg);
     background-size: cover;
-    min-height: 100vh;
     position: relative;
-    z-index: 1;
-}
-
-
-header::before {
-    content: "";
-    position: absolute;
+    z-index: 100;
+    position: fixed;
     top: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.45);
-    z-index: 2;
-
+    left: 0;
+    right: 0;
 }
+
 
 header nav {
     padding: 20px;
@@ -162,7 +153,7 @@ header nav i.glass {
         cursor: pointer;
     }
 
-    header nav:focus-within ul {
+    header nav .menu:hover+ul {
         display: flex;
         flex-direction: column;
         position: absolute;
@@ -171,10 +162,10 @@ header nav i.glass {
         width: 100%;
         background-color: var(--black-transparent);
         padding: 0;
-        z-index: 6;
+        z-index: 100;
     }
 
-    header nav:focus-within ul li a {
+    header nav ul li a {
         padding: 15px;
         z-index: 6;
     }
@@ -184,32 +175,47 @@ header nav i.glass {
     }
 }
 
+/* header end */
 
-header .text {
-    max-width: 650px;
-    background-color: var(--transparent-color);
-    padding: 40px 80px;
+/* landing start */
+
+.landing {
+    background: black;
+    min-height: calc(100vh);
+}
+
+.landing::before {
+    content: "";
     position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-    z-index: 3;
-
-}
-
-header .text h1 {
-    margin: 20px 0;
-}
-
-header .text p {
+    top: 0;
+    height: 100%;
     width: 100%;
-    line-height: 1.8;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 2;
+
 }
 
+.landing .image-slider {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+}
 
+.landing .image-slider img {
+    opacity: 0;
+    object-fit: cover;
+    position: absolute;
+    transition: opacity 0.3s;
+}
 
-header .spans {
+.landing .image-slider img.active {
+    opacity: 1;
+}
+
+.landing .spans {
     position: absolute;
     bottom: 15px;
     left: 50%;
@@ -220,52 +226,75 @@ header .spans {
     z-index: 3;
 }
 
-header .spans span {
-    display: inline-block;
-    background-color: transparent;
-    border: solid 1px white;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-}
 
-header .spans span:nth-child(2) {
+.landing .spans .active {
     background-color: var(--main-color);
-    border-color: var(--main-color);
+    border-color: white;
 }
 
-header .arrows {
+.landing {
+    position: relative;
+    z-index: 1;
+}
+
+.landing .arrows {
     position: absolute;
     width: 100%;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
     color: white;
-    z-index: 3;
+    z-index: 10;
+    cursor: pointer;
 }
 
-header .arrow-left {
+.landing .arrow-left,
+.landing .arrow-right {
     position: absolute;
+    z-index: 11;
+}
+
+.landing .arrow-left {
     left: 30px;
 }
 
-header .arrow-right {
-    position: absolute;
+.landing .arrow-right {
     right: 30px;
 }
 
+.landing .text {
+    max-width: 650px;
+    background-color: var(--transparent-color);
+    padding: 40px 80px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    z-index: 5;
+}
+
+.landing .text h1 {
+    margin: 20px 0;
+}
+
+.landing .text p {
+    width: 100%;
+    line-height: 1.8;
+}
+
 @media (max-width: 767px) {
-    header .arrows i {
+    .landing .arrows i {
         display: none;
     }
 
-    header .text {
+    .landing .text {
         padding: 16px;
     }
 
 }
 
-/* header end */
+/* landing end */
 
 /* the main title start */
 

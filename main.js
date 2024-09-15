@@ -3,11 +3,37 @@
 let header = document.querySelector("header");
 window.onscroll = function () {
   if (window.scrollY >= window.innerHeight) {
-    header.style.background = "var(--black-transparent)";
+    header.style.background = "#0f6d90";
   } else {
     header.style.background = "transparent";
   }
 };
+
+//nav bar
+
+let nav = document.querySelector(".links ul"),
+  menuButt = document.querySelector(".menu");
+
+menuButt.onclick = function (event) {
+  if (nav.style.opacity === "1") {
+    nav.style.cssText = `
+    opacity: 0;
+    display: none;`;
+  } else {
+    nav.style.cssText = `
+    opacity: 1;
+    display: flex;`;
+  }
+};
+
+// Hide the menuButt if clicking outside of it
+document.addEventListener("click", function (event) {
+  if (!menuButt.contains(event.target) && !nav.contains(event.target)) {
+    nav.style.cssText = `
+    opacity: 0;
+    display: none;`;
+  }
+});
 
 // header end
 
@@ -90,3 +116,27 @@ landing.addEventListener("touchend", (e) => {
 checker();
 
 //landing end
+
+//categories start
+
+let categories = Array.from(document.querySelectorAll(".categories span")),
+  boxes = document.querySelectorAll(".pictures .box");
+console.log(boxes.length);
+categories.forEach((category) => {
+  category.addEventListener("click", function () {
+    categories.forEach((cat) => {
+      cat.classList.remove("active");
+    });
+    this.classList.add("active");
+    boxes.forEach((box) => {
+      if (
+        box.classList.contains(category.innerHTML) ||
+        category.innerHTML === "All"
+      ) {
+        box.style.display = "block";
+      } else box.style.display = "none";
+    });
+  });
+});
+
+//categories end

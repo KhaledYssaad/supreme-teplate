@@ -1,7 +1,7 @@
 /* Start Variables */
 :root {
     --main-color: #19c8fa;
-    --transparent-color: rgb(15 116 143 / 70%);
+    --transparent-color: hsla(196, 81%, 31%, 0.7);
     --section-padding: 100px;
     --black-transparent: rgba(0, 0, 0, 0.55);
 }
@@ -153,8 +153,7 @@ header nav i.glass {
         cursor: pointer;
     }
 
-    header nav .menu:hover+ul {
-        display: flex;
+    header nav ul {
         flex-direction: column;
         position: absolute;
         top: 100%;
@@ -215,22 +214,6 @@ header nav i.glass {
     opacity: 1;
 }
 
-.landing .spans {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 10px;
-    z-index: 3;
-}
-
-
-.landing .spans .active {
-    background-color: var(--main-color);
-    border-color: white;
-}
 
 .landing {
     position: relative;
@@ -495,17 +478,24 @@ section.portfolio {
 
 .portfolio .categories span {
     padding: 5px 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.portfolio .categories span:hover {
+    background-color: var(--transparent-color);
+    color: white;
+}
+
+.portfolio .categories span.active {
+    background-color: var(--main-color);
+    color: white;
 }
 
 @media (max-width:767px) {
     .portfolio .categories {
         flex-wrap: wrap;
     }
-}
-
-.portfolio .categories span:first-child {
-    background-color: var(--main-color);
-    color: white;
 }
 
 .portfolio .pictures {
@@ -519,6 +509,8 @@ section.portfolio {
 .portfolio .pictures .box {
     overflow: hidden;
     position: relative;
+    max-width: 99%;
+    margin: auto;
 }
 
 
@@ -536,7 +528,7 @@ section.portfolio {
 
 .portfolio .pictures .box img {
     display: block;
-    max-width: 98%;
+    max-width: 100%;
     margin: 0 auto;
     object-fit: cover;
     transition: 0.2s;
@@ -577,7 +569,7 @@ section.portfolio {
 .portfolio .More {
     display: block;
     margin: 40px auto;
-    background-color: var(--main-color);
+    background-color: #0f6d90;
     color: white;
     width: fit-content;
     padding: 10px 20px;
@@ -1102,7 +1094,7 @@ section.video video {
 .price-contact button {
     display: block;
     padding: 10px 15px;
-    background-color: var(--main-color);
+    background-color: #0f6d90;
     border: none;
 }
 
@@ -1175,7 +1167,7 @@ section.video video {
     padding: 0 15px;
     border: none;
     outline: none;
-    background-color: var(--main-color);
+    background-color: #0f6d90;
     color: white;
     cursor: pointer
 }
@@ -1240,13 +1232,14 @@ section.video video {
 
 .form-container form textarea {
     height: 200px;
+    resize: none;
 }
 
 .form-container form input[type="submit"] {
     align-self: flex-end;
     width: fit-content;
     border: none;
-    background-color: var(--main-color);
+    background-color: #0f6d90;
     color: white;
     cursor: pointer;
     padding: 15px 20px;
@@ -1384,7 +1377,7 @@ a.up {
     text-decoration: none;
     color: white;
     text-align: center;
-    background-color: var(--main-color);
+    background-color: #0f6d90;
     /* Slightly muted red for elegance */
     padding: 12px;
     position: fixed;
